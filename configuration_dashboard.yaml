@@ -1,0 +1,81 @@
+title: Xuong pi one
+views:
+  - theme: Backend-selected
+    path: default_view
+    title: Home
+    icon: mdi:home
+    visible:
+      - user: 344fc74f73444625b95c0120ccd3a752
+      - user: 33631e74cf5f4c6d8f03405c31beb7c6
+      - user: c9e09ac12f5846fbb1d4e0369231303f
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - person.nmtam
+      - type: entities
+        entities:
+          - entity: person.dungxi
+      - type: entities
+        entities:
+          - entity: person.toai_le
+      - type: entities
+        entities:
+          - switch.light1
+          - switch.light2
+        title: Switch
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: switch.light1
+        show_state: true
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: switch.light2
+        show_state: true
+      - hours_to_show: 24
+        graph: line
+        type: sensor
+        entity: sensor.xuong_humidity
+        detail: 2
+        icon: mdi:water-percent
+      - hours_to_show: 24
+        graph: line
+        type: sensor
+        entity: sensor.xuong_temperature
+        detail: 2
+        icon: mdi:thermometer
+      - type: entity
+        entity: sun.sun
+  - theme: Backend-selected
+    title: Specification
+    visible:
+      - user: 344fc74f73444625b95c0120ccd3a752
+    icon: mdi:tools
+    badges: []
+    cards:
+      - type: entity
+        entity: sensor.ip_pi
+        name: IP Orange Pi One
+        icon: mdi:home
+        state_color: false
+      - type: entity
+        entity: sensor.cpu_pi_temp
+        icon: mdi:home-thermometer
+      - type: entity
+        entity: sensor.cpu_pi
+        name: CPU Orange Pi One
+        icon: mdi:memory
+      - type: entity
+        entity: sensor.disk_pi
+        name: Storage Disk Pi
+        icon: mdi:harddisk
+        state_color: false
+      - type: entity
+        entity: sensor.memory_pi
+        icon: mdi:memory
