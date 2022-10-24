@@ -1,0 +1,56 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensors.yaml
+# add switch
+switch:
+  - platform: mqtt
+    name: "Light1"
+    state_topic: "xuong/device/+/status"
+    command_topic: "xuong/device/esp1170372/cmd"
+    # state_topic: "xuong/device/+/status"
+    # command_topic: "xuong/device/+/cmd"
+    payload_on: "ON1"
+    payload_off: "OFF1"
+    state_on: "ON1"
+    state_off: "OFF1"
+    qos: 0
+    retain: false
+  - platform: mqtt
+    name: "Light2"
+    state_topic: "xuong/device/esp1170372/status"
+    command_topic: "xuong/device/esp1170372/cmd"
+    payload_on: "ON2"
+    payload_off: "OFF2"
+    state_on: "ON2"
+    state_off: "OFF2"
+    qos: 0
+    retain: false
+  - platform: mqtt
+    name: "Đèn 1"
+    state_topic: "xuong/device/esp6483112/status"
+    command_topic: "xuong/device/esp6483112/cmd"
+    payload_on: "ON1"
+    payload_off: "OFF1"
+    state_on: "ON1"
+    state_off: "OFF1"
+    qos: 0
+    retain: false
+  - platform: mqtt
+    name: "Đèn 2"
+    state_topic: "xuong/device/esp6483112/status"
+    command_topic: "xuong/device/esp6483112/cmd"
+    payload_on: "ON2"
+    payload_off: "OFF2"
+    state_on: "ON2"
+    state_off: "OFF2"
+    qos: 0
+    retain: false
