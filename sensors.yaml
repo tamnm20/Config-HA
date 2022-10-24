@@ -1,0 +1,36 @@
+#sensors
+- platform: mqtt
+  name: "xuong Temperature"
+  state_topic: "xuong/device/esp1170372/sensors"
+  unit_of_measurement: '°C'
+  value_template: "{{ value_json.temperature }}" 
+- platform: mqtt
+  name: "xuong Humidity"
+  state_topic: "xuong/device/esp1170372/sensors"
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.humidity }}" 
+- platform: mqtt
+  name: "Cpu Pi Temp"
+  state_topic: "xuong/server/specification"
+  unit_of_measurement: '°C'
+  value_template: "{{ value_json.CpuPiTemp }}"
+- platform: mqtt
+  name: "Ip Pi"
+  state_topic: "xuong/server/specification"
+  unit_of_measurement: ''
+  value_template: "{{ value_json.IpPi }}" 
+- platform: mqtt
+  name: "Disk Pi"
+  state_topic: "xuong/server/specification"
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.DiskPi }}" 
+- platform: mqtt
+  name: "Memory Pi"
+  state_topic: "xuong/server/specification"
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.MemoryPi }}"
+- platform: mqtt
+  name: "Cpu Pi"
+  state_topic: "xuong/server/specification"
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.CpuPi }}" 
