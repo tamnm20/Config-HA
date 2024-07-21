@@ -34,3 +34,4 @@
   state_topic: "xuong/server/specification"
   unit_of_measurement: '%'
   value_template: "{{ value_json.CpuPi }}" 
+
